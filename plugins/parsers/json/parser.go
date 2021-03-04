@@ -142,8 +142,8 @@ func (p *Parser) parseObject(data map[string]interface{}, timestamp time.Time) (
 		}
 	}
 
-	tags, nFields := p.switchFieldToTag(tags, f.Fields)
-	metric, err := metric.New(name, tags, nFields, timestamp)
+	// tags, nFields := p.switchFieldToTag(tags, f.Fields)
+	metric, err := metric.New(name, tags, f.Fields, timestamp)
 	if err != nil {
 		return nil, err
 	}
